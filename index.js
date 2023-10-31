@@ -5,6 +5,14 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
+
+app.get("/about", (req, res) => {
+  res.send("This is my about route..... ");
+});
+
 app.post("/create-folders", async (req, res) => {
   const { token, folderNames, spaceId } = req.body;
 
